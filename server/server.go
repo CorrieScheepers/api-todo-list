@@ -3,7 +3,7 @@ package server
 import (
 	"context"
 
-	todoservice "api-todo-list/grpc"
+	todoservice "api-todo-list/proto"
 	"api-todo-list/repository"
 )
 

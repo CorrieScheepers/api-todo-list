@@ -6,6 +6,9 @@ import (
 
 	"api-todo-list/client"
 
+	"os"
+
+	"github.com/joho/godotenv"
 	"github.com/spf13/cobra"
 )
 
@@ -28,5 +31,11 @@ var listCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(listCmd)
-	listCmd.Flags().StringVarP(&serverAddress, "server", "s", "localhost:50051", "gRPC server address")
+	err := godotenv.Load(".config/.config")
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
+	server := os.Getenv("SERVER")
+	listCmd.Flags().StringVarP(&serverAddress, "server", "s", server, "gRPC server address")
 }

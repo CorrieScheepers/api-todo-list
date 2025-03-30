@@ -27,7 +27,6 @@ func ConnectToMySqlDb() (*gorm.DB, error) {
 	dataSource := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", mysqlUser, mysqlPassword, mysqlHost, mysqlPort, mysqlDb)
 
 	database, err := gorm.Open("mysql", dataSource)
-	log.Println("Connecting to MySQL database %s...", dataSource)
 
 	if err != nil {
 		return nil, fmt.Errorf("failed to connect to database: %v", err)

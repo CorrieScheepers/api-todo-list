@@ -7,16 +7,29 @@ services:
       - "3316:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql  
 
-  api-todo-list-service:
+  api-todo-list-server:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile 
     ports:
-      - "50051:50051"  
+      - "50051:50051"
     depends_on:
-      - mysql  
+      - mysql
+    environment:
+      MODE: server  
+
+  api-todo-list-client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile  
+    depends_on:
+      - api-todo-list-server
+    environment:
+      MODE: client  
+      SERVER_ADDRESS: api-todo-list-server:50051  
+    command: ["go", "run", "main.go", "list"]
 
 volumes:
   mysql_data:

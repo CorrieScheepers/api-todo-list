@@ -1,8 +1,0 @@
-{
-	//"name": "Go Development Environment",
-	//"dockerFile": "../Dockerfile",
-	//"features": {
-	//  "ghcr.io/devcontainers/features/go:1": {}
-	//}
-  }
-  

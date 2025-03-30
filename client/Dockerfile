@@ -17,7 +17,7 @@ COPY . .
 RUN go build -o api-todo-list .
 
 # Expose the server's port
-EXPOSE 50051
+EXPOSE 4000
 
 # Command to run the server
 CMD ["./api-todo-list"]

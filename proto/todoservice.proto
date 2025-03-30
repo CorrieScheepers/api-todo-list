@@ -6,6 +6,7 @@ package todoservice;
 
 service TodoService {
   rpc ListTasks (ListTasksRequest) returns (ListTasksResponse) {}
+  rpc CreateTask (CreateTaskRequest) returns (CreateTaskResponse) {}
 }
 
 message Task {
@@ -20,3 +21,12 @@ message ListTasksRequest {}
 message ListTasksResponse {
   repeated Task tasks = 1;
 }
+
+message CreateTaskRequest {
+  string title = 1;
+  string description = 2;
+}
+message CreateTaskResponse {
+  Task task = 1;
+}
+
