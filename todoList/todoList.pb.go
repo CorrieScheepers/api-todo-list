@@ -599,7 +599,7 @@ const file_todoList_todoList_proto_rawDesc = "" +
 	"\n" +
 	"UpdateTask\x12\x1b.todolist.UpdateTaskRequest\x1a\x1c.todolist.UpdateTaskResponse\"\x00\x12I\n" +
 	"\n" +
-	"DeleteTask\x12\x1b.todolist.DeleteTaskRequest\x1a\x1c.todolist.DeleteTaskResponse\"\x00B*Z(github.com/cscheepers/api-rodo-list/grpcb\x06proto3"
+	"DeleteTask\x12\x1b.todolist.DeleteTaskRequest\x1a\x1c.todolist.DeleteTaskResponse\"\x00B+Z)github.com/cscheepers2/api-rodo-list/grpcb\x06proto3"
 
 var (
 	file_todoList_todoList_proto_rawDescOnce sync.Once

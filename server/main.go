@@ -5,7 +5,7 @@ import (
     "fmt"
     "log"
 
-    "github.com/cscheepers/api-rodo-list/grpc"
+    "github.com/cscheepers2/api-rodo-list/grpc"
     "google.golang.org/grpc"
     "database/sql"
 )
