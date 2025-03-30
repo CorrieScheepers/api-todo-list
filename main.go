@@ -1,28 +1,18 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	"net"
-
-	"api-todo-list/cmd"
 	"api-todo-list/database"
 	todoservice "api-todo-list/grpc"
 	"api-todo-list/repository"
 	"api-todo-list/server"
+	"fmt"
+	"log"
+	"net"
 
 	"google.golang.org/grpc"
 )
 
 func main() {
-	// Handle the CLI commands
-	go cmd.Execute()
-
-	// Run the server
-	runServer()
-}
-
-func runServer() {
 	db, err := database.ConnectToMySqlDb()
 	if err != nil {
 		log.Fatalf("Failed to connect to database: %v", err)

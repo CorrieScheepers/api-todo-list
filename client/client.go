@@ -21,6 +21,7 @@ type TodoClient struct {
 func NewTodoClient(serverAddr string) (*TodoClient, error) {
 
 	conn, err := grpc.Dial(serverAddr, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	log.Println("Connecting to server... %s", serverAddr)
 
 	if err != nil {
 		return nil, fmt.Errorf("failed to connect to server: %v", err)
