@@ -1,16 +1,14 @@
-
 services:
   mysql:
-    image: mysql:8.0.26
-    container_name: mysql-dev
-    tmpfs:
-      - /var/lib/mysql
-    command: mysqld --sql_mode="TRADITIONAL"
+    image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: test1234
-      TZ: Africa/Johannesburg
-    expose:
-      - 3306
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydatabase
+    ports:
+      - "3316:3306"
     volumes:
-      - ./src/database:/docker-entrypoint-initdb.d
+      - mysql_data:/var/lib/mysql                   
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql  
 
+volumes:
+  mysql_data:

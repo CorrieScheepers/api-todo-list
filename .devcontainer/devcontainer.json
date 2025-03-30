@@ -1,9 +1,8 @@
 {
-	"name": "Go Development Environment",
-	"dockerFile": "Dockerfile",
-	"features": {
-	  "ghcr.io/devcontainers/features/go:1": {}
-	},
-	"postCreateCommand": "docker-compose -f docker-dev-compose.yml up -d --build"
+	//"name": "Go Development Environment",
+	//"dockerFile": "../Dockerfile",
+	//"features": {
+	//  "ghcr.io/devcontainers/features/go:1": {}
+	//}
   }
   
