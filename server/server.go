@@ -1,13 +1,12 @@
 package server
 
 import (
-	"api-todo-list/grpc" // Adjust the import path to your generated grpc package
+	"api-todo-list/grpc"
 	"context"
 	"database/sql"
 	"fmt"
 	"log"
 	"net"
-	// "api-todo-list/grpc"  // Adjust the import path to your generated grpc package
 
 	// Adjust the import path to your generated grpc package
 	_ "github.com/go-sql-driver/mysql" // Import MySQL driver
