@@ -1,17 +1,21 @@
-# Use a Go image as the base image
-FROM mcr.microsoft.com/devcontainers/go:latest AS base
+# Use the official Golang image as a base image
+FROM golang:1.24.1-bookworm
 
 # Set the working directory inside the container
-WORKDIR /workspace
+WORKDIR /app
 
-EXPOSE 8080
+# Copy the Go module files and download dependencies
+COPY go.mod go.sum ./
+RUN go mod download
 
-FROM mcr.microsoft.com/devcontainers/go:latest AS build
-WORKDIR /workspace
-COPY ["*", "."]
+# Copy the source code into the container
+COPY . .
 
-# Install Go dependencies (if needed)
-RUN go mod tidy
+# Build the Go application
+RUN go build -o api-todo-list .
 
-# Start the shell to allow interaction
-#CMD ["/bin/bash"]
+# Expose the port your gRPC server will run on
+EXPOSE 50051
+
+# Run the application
+CMD ["./api-todo-list"]

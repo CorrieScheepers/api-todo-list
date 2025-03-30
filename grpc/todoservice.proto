@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "api-todo-list/todoservice";
+
+package todoservice;
+
+service TodoService {
+  rpc ListTasks (ListTasksRequest) returns (ListTasksResponse) {}
+}
+
+message Task {
+  int32 id = 1;
+  string title = 2;
+  string description = 3;
+  bool completed = 4;
+}
+
+message ListTasksRequest {}
+
+message ListTasksResponse {
+  repeated Task tasks = 1;
+}

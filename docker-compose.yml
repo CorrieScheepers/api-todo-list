@@ -6,8 +6,17 @@ services:
     ports:
       - "3316:3306"
     volumes:
-      - mysql_data:/var/lib/mysql                   
-      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql  
+      - mysql_data:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  api-todo-list-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "50051:50051"  
+    depends_on:
+      - mysql  
 
 volumes:
   mysql_data:
