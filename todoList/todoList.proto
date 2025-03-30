@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/cscheepers2/api-rodo-list/grpc";
+option go_package = "github.com/CorrieScheepers2/api-todo-list/grpc";
 
 package todolist;
 
