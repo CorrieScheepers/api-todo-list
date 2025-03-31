@@ -1,8 +1,10 @@
 # api-todo-list
 
+## Getting started
 
-## gRPC stuff
+This project requires `Go` and `Docker` to be able to run it. Follow these stesp to get all three containers running.
 
-```
-protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative todoList.proto
-```
+- Navigate to the root folder in PS of this project
+- Run `docker compose up`
+- It should start up the `mysql`, `api-todo-list-server` and `api-todo-list-client` containers.
+- In the `api-todo-list-client` container you shoul be able to use the `add` command to add new entries or the `list` command to read all the entries in the SQL database.
